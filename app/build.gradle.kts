@@ -10,8 +10,8 @@ android {
         applicationId = "ro.noadsx15.app"
         minSdk = 29
         targetSdk = 35
-        versionCode = 30
-        versionName = "3.0.0"
+        versionCode = 31
+        versionName = "3.0.1"
         testInstrumentationRunner = "android.test.InstrumentationTestRunner"
     }
     compileOptions {
