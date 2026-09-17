@@ -8,8 +8,8 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public final class BlocklistStore {
     private static final String[] SOURCES={
-        "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/pro.mini.txt",
-        "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/popupads.txt"
+        "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro.mini-onlydomains.txt",
+        "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/popupads-onlydomains.txt"
     };
     private static final Set<String> FALLBACK=new HashSet<>(Arrays.asList("doubleclick.net","googlesyndication.com","googleadservices.com","adnxs.com","adsrvr.org","amazon-adsystem.com","applovin.com","unity3d.com","criteo.com","taboola.com","outbrain.com","pubmatic.com","rubiconproject.com","openx.net"));
     private final Context context; private final AtomicReference<Set<String>> blocked=new AtomicReference<>(FALLBACK); private final AtomicReference<Set<String>> allowed=new AtomicReference<>(Collections.emptySet());
