@@ -5,7 +5,24 @@ import java.util.Set;
 
 public final class DomainRules {
     private DomainRules() {}
-    public static String normalize(String s) { return s == null ? "" : s.trim().replaceAll("^\.+|\.+$", "").toLowerCase(Locale.US); }
+   public static String normalize(String value) {
+    if (value == null) {
+        return "";
+    }
+
+    String result = value.trim().toLowerCase(Locale.US);
+
+    while (result.startsWith(".")) {
+        result = result.substring(1);
+    }
+
+    while (result.endsWith(".")) {
+        result = result.substring(0, result.length() - 1);
+    }
+
+    return result;
+} 
+{ return s == null ? "" : s.trim().replaceAll("^\.+|\.+$", "").toLowerCase(Locale.US); }
     public static String parse(String line) {
         if (line == null) return null;
         String v=line.trim();
