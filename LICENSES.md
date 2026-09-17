@@ -1,0 +1,1 @@
+Blocklist sources are downloaded at runtime from HaGeZi DNS Blocklists and AdGuard DNS filter. Their copyright and licenses remain with their respective projects. This repository does not redistribute the lists. Review source licenses before redistribution of the APK.
