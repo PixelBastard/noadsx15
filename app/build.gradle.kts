@@ -1,25 +1,20 @@
-plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-}
+plugins { id("com.android.application") }
 
 android {
-    namespace = "ro.noadsx15.app"
+    namespace = "ro.noadsx15.hybrid"
     compileSdk = 35
     defaultConfig {
-        applicationId = "ro.noadsx15.app"
+        applicationId = "ro.noadsx15.hybrid"
         minSdk = 29
         targetSdk = 35
-        versionCode = 31
-        versionName = "3.0.1"
+        versionCode = 41
+        versionName = "4.1.0"
         testInstrumentationRunner = "android.test.InstrumentationTestRunner"
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions { jvmTarget = "17" }
 }
-kotlin { jvmToolchain(17) }
 
 dependencies { testImplementation("junit:junit:4.13.2") }

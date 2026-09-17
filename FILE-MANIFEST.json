@@ -1,71 +1,90 @@
 {
-  "lexical_checks": {
-    "app/src/main/java/ro/noadsx15/app/BlocklistStore.kt": [],
-    "app/src/main/java/ro/noadsx15/app/MainActivity.kt": [],
-    "app/src/main/java/ro/noadsx15/app/DomainRules.kt": [],
-    "app/src/main/java/ro/noadsx15/app/DnsPacket.kt": [],
-    "app/src/main/java/ro/noadsx15/app/DnsFilterService.kt": []
+  "checks": {
+    "master_start": true,
+    "master_stop": true,
+    "first_run_accessibility": true,
+    "vpn_consent": true,
+    "helper_inert_when_off": true,
+    "version": true,
+    "balanced_main": true,
+    "balanced_access": true
   },
   "files": [
     {
-      "path": "build.gradle.kts",
-      "sha256": "50425357e4449207a6e3098fa4f4dc66864a870859025051fc809589ddb858df"
+      "path": "settings.gradle.kts",
+      "sha256": "c0da11bf046fc82bd7d9c6590cee41f15e0579fa09b91c74ae7b013e4126f01f"
     },
     {
-      "path": "LICENSES.md",
-      "sha256": "940dab13a0d710e7358ebf903b2de078bbd764c24ffeed0bc2d51c9672c40943"
+      "path": "build.gradle.kts",
+      "sha256": "966fb16c81800d8b941dcaea2339c97fc548cc589303521f1f5ecb92401e6ab0"
     },
     {
       "path": "gradle.properties",
-      "sha256": "f36eb4825f12cb1892b70c34ecf6e2b2b0d1953f6bc87c63936ebea5795d21ac"
+      "sha256": "fdcda40a82e36d5031ec21ee8685e7275cf30d5bb916927893a6687b70b5006c"
     },
     {
       "path": "README.md",
-      "sha256": "d5c365e737608943ebbcac5b77b3140021d362bf1224a60d85cf1b797b645044"
+      "sha256": "5295c93f00bb173304c271f92414935e2e682cf5511921866dc9a791e4e9c5ac"
     },
     {
-      "path": "settings.gradle.kts",
-      "sha256": "2cea869f196f8edfd36b41b892de9ba467345406411346edc15cd487174b4ac7"
+      "path": "PRIVACY.md",
+      "sha256": "ca4d4d2a157f7d335f05cce60eebbd948201de77336221377e02e3b158049eb0"
+    },
+    {
+      "path": "ONE-BUTTON.md",
+      "sha256": "2283ad6fcf3e3eeaec5c300760b63cf7eff5a7b04e2cdec0c27af5f25336ca93"
+    },
+    {
+      "path": ".github/workflows/build.yml",
+      "sha256": "5684f1a779bfc3b8b530de51f68506dbd4e28469d21c4a2e43c33c475cb4f34b"
     },
     {
       "path": "app/build.gradle.kts",
-      "sha256": "b81a5ce7ba29c51047f0beb504e23e049e543c713a3261ab9a548d91dd3d01f7"
+      "sha256": "4f8192fc37a7bfb02ac3b2835712489434c753923a9cbb6b42c631d25e1b6aca"
     },
     {
       "path": "app/src/main/AndroidManifest.xml",
-      "sha256": "f63df6537c9458f9d3aa423010ac1a7ca9f7127531889c277cf950dac2d34d3f"
+      "sha256": "1a3d7f74515b222ef81f291eadd56d93bbea3d8942db565ef4528f429b617df5"
     },
     {
-      "path": "app/src/main/java/ro/noadsx15/app/BlocklistStore.kt",
-      "sha256": "40694e277852e58ae6e06bd9ff3aa4e4e9b57ea28bb4829f3ec1dc67fb7ae16d"
+      "path": "app/src/main/java/ro/noadsx15/hybrid/DomainRules.java",
+      "sha256": "2a8bd6b8e8649652a121daf541707f83e1b22a6394f3c3bbdce90e5c59b2fd46"
     },
     {
-      "path": "app/src/main/java/ro/noadsx15/app/DnsPacket.kt",
-      "sha256": "b3cdc14cb697b67f8003b7399a736ede55d047519c5a56cb50ade26a0f98dea6"
+      "path": "app/src/main/java/ro/noadsx15/hybrid/BlocklistStore.java",
+      "sha256": "e00abd4e1655659ad3dfd73183487289af074cdb6daa88e03df987cd2017e403"
     },
     {
-      "path": "app/src/main/java/ro/noadsx15/app/DnsFilterService.kt",
-      "sha256": "dee57bb3ffe4b02b728f2a862aee683c33ae11955acecc00fbe76fe26156312a"
+      "path": "app/src/main/java/ro/noadsx15/hybrid/DnsPacket.java",
+      "sha256": "db66f4ad71fb8df52a55975c77909ef5816654fcd82d11f8eb0bf812eb3fd219"
     },
     {
-      "path": "app/src/main/java/ro/noadsx15/app/DomainRules.kt",
-      "sha256": "f3af21e19493f8bcb1fdd87635c95f92dc2a84cebef4280fb2e0a49596fd13ee"
+      "path": "app/src/main/java/ro/noadsx15/hybrid/DnsVpnService.java",
+      "sha256": "bac177bf5ed72883950b1208fe59e9aecf61750f2889f4fa3de92018cad01a69"
     },
     {
-      "path": "app/src/main/java/ro/noadsx15/app/MainActivity.kt",
-      "sha256": "bd51609644925e75452183169516b3cdb0fe7d30b35fff8ac6ca42671c5c5b87"
+      "path": "app/src/main/java/ro/noadsx15/hybrid/AdUiAccessibilityService.java",
+      "sha256": "48920922307d1cf8bd1d84f6184629f1f9e73aca7bc800f886e4a2355bfab1d6"
+    },
+    {
+      "path": "app/src/main/java/ro/noadsx15/hybrid/MainActivity.java",
+      "sha256": "7c0b8dd1a71ee26f2901b874003b01c471ac4479946fe1a99cd9e53bfac58994"
     },
     {
       "path": "app/src/main/res/values/styles.xml",
       "sha256": "e0f9196921ecf9d22d648bf7f56293f6d680ab1c1396a216a0a155f095b01840"
     },
     {
-      "path": "app/src/test/java/ro/noadsx15/app/DomainRulesTest.kt",
-      "sha256": "f644ff35050e80244c117968fad6c8ea2d6dcd940c87c409f792c2ecbe3ef196"
+      "path": "app/src/main/res/values/strings.xml",
+      "sha256": "984daea1d2396ae00f396f3667e82aa3791fc16253ab5512d1741362ddb089e9"
     },
     {
-      "path": ".github/workflows/build.yml",
-      "sha256": "e2feec59193fa3afbffe23f7d9f32cc8e3f395094f1fd5cca0dc5fcaac49d4bb"
+      "path": "app/src/main/res/xml/accessibility_service_config.xml",
+      "sha256": "a85d2662f79e4f583bb84aedd0d92cbb36c8daf2d5c766357ba64cf11d82841d"
+    },
+    {
+      "path": "app/src/test/java/ro/noadsx15/hybrid/DomainRulesTest.java",
+      "sha256": "4656af58486ec87e1874887105d9c13f8f6ee175803028400d8cad674d753e95"
     }
   ]
 }
