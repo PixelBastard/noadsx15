@@ -4,37 +4,93 @@ import java.util.Locale;
 import java.util.Set;
 
 public final class DomainRules {
-    private DomainRules() {}
-   public static String normalize(String value) {
-    if (value == null) {
-        return "";
+
+    private DomainRules() {
     }
 
-    String result = value.trim().toLowerCase(Locale.US);
+    public static String normalize(String value) {
+        if (value == null) {
+            return "";
+        }
 
-    while (result.startsWith(".")) {
-        result = result.substring(1);
+        String result = value.trim().toLowerCase(Locale.US);
+
+        while (result.startsWith(".")) {
+            result = result.substring(1);
+        }
+
+        while (result.endsWith(".") && !result.isEmpty()) {
+            result = result.substring(0, result.length() - 1);
+        }
+
+        return result;
     }
 
-    while (result.endsWith(".")) {
-        result = result.substring(0, result.length() - 1);
-    }
-
-    return result;
-} 
-{ return s == null ? "" : s.trim().replaceAll("^\.+|\.+$", "").toLowerCase(Locale.US); }
     public static String parse(String line) {
-        if (line == null) return null;
-        String v=line.trim();
-        if(v.isEmpty()||v.startsWith("#")||v.startsWith("!")||v.startsWith("@@"))return null;
-        if(v.startsWith("||"))v=v.substring(2);
-        int dollar=v.indexOf('$');if(dollar>=0)v=v.substring(0,dollar);
-        while(v.endsWith("^")||v.endsWith("|"))v=v.substring(0,v.length()-1);
-        if(v.startsWith("0.0.0.0 ")||v.startsWith("127.0.0.1 "))v=v.substring(v.indexOf(' ')+1).trim();
-        if(v.contains("/")||v.contains("*")||v.contains(" ")||!v.contains("."))return null;
-        v=normalize(v);return v.matches("[a-z0-9._-]+")?v:null;
+        if (line == null) {
+            return null;
+        }
+
+        String value = line.trim();
+
+        if (value.isEmpty()
+                || value.startsWith("#")
+                || value.startsWith("!")
+                || value.startsWith("@@")) {
+            return null;
+        }
+
+        if (value.startsWith("||")) {
+            value = value.substring(2);
+        }
+
+        int optionsPosition = value.indexOf('$');
+        if (optionsPosition >= 0) {
+            value = value.substring(0, optionsPosition);
+        }
+
+        while (value.endsWith("^") || value.endsWith("|")) {
+            value = value.substring(0, value.length() - 1);
+        }
+
+        if (value.startsWith("0.0.0.0 ")
+                || value.startsWith("127.0.0.1 ")) {
+            value = value.substring(value.indexOf(' ') + 1).trim();
+        }
+
+        if (value.contains("/")
+                || value.contains("*")
+                || value.contains(" ")
+                || !value.contains(".")) {
+            return null;
+        }
+
+        value = normalize(value);
+
+        if (!value.matches("[a-z0-9._-]+")) {
+            return null;
+        }
+
+        return value;
     }
+
     public static boolean matches(String host, Set<String> rules) {
-        String c=normalize(host);while(!c.isEmpty()){if(rules.contains(c))return true;int dot=c.indexOf('.');if(dot<0)return false;c=c.substring(dot+1);}return false;
+        String candidate = normalize(host);
+
+        while (!candidate.isEmpty()) {
+            if (rules.contains(candidate)) {
+                return true;
+            }
+
+            int dotPosition = candidate.indexOf('.');
+
+            if (dotPosition < 0) {
+                return false;
+            }
+
+            candidate = candidate.substring(dotPosition + 1);
+        }
+
+        return false;
     }
 }
